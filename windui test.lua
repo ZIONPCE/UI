@@ -103,7 +103,7 @@ end)()
         Theme = "Dark",
         Resizable = true,
         SideBarWidth = 200,
-        Background = "https://i.postimg.cc/QxWWGyHL/IMG-20250806-220614.png",
+        Background = "",
         BackgroundImageTransparency = 0.42,
         HideSearchBar = false,
         ScrollBarEnabled = true,
