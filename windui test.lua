@@ -541,15 +541,6 @@ local Button = Tab:Button({
     end
 })
 
-local Button = Tab:Button({
-    Title = "ProHaxV3",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/DOORS-Prohax-v3-47773"))()
-    end
-})
-
 local Tab = Window:Tab({
     Title = "自然灾害",
     Icon = "building",
