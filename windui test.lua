@@ -1,3 +1,126 @@
+-- 创建加载界面
+local LoadingUI = Instance.new("ScreenGui")
+LoadingUI.Name = "ZScriptLoadingUI"
+LoadingUI.Parent = game:GetService("CoreGui")
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 400, 0, 200)
+MainFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+MainFrame.BackgroundTransparency = 0.2
+MainFrame.BorderSizePixel = 0
+MainFrame.Parent = LoadingUI
+
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 12)
+Corner.Parent = MainFrame
+
+local Title = Instance.new("TextLabel")
+Title.Text = "Z脚本 正在加载..."
+Title.Size = UDim2.new(0.8, 0, 0, 40)
+Title.Position = UDim2.new(0.1, 0, 0.1, 0)
+Title.BackgroundTransparency = 1
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 24
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = MainFrame
+
+local Author = Instance.new("TextLabel")
+Author.Text = "作者: Z某人"
+Author.Size = UDim2.new(0.8, 0, 0, 20)
+Author.Position = UDim2.new(0.1, 0, 0.3, 0)
+Author.BackgroundTransparency = 1
+Author.TextColor3 = Color3.fromRGB(200, 200, 200)
+Author.Font = Enum.Font.Gotham
+Author.TextSize = 14
+Author.TextXAlignment = Enum.TextXAlignment.Left
+Author.Parent = MainFrame
+
+local ProgressBar = Instance.new("Frame")
+ProgressBar.Size = UDim2.new(0.8, 0, 0, 10)
+ProgressBar.Position = UDim2.new(0.1, 0, 0.6, 0)
+ProgressBar.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+ProgressBar.BorderSizePixel = 0
+ProgressBar.Parent = MainFrame
+
+local ProgressBarCorner = Instance.new("UICorner")
+ProgressBarCorner.CornerRadius = UDim.new(1, 0)
+ProgressBarCorner.Parent = ProgressBar
+
+local ProgressFill = Instance.new("Frame")
+ProgressFill.Size = UDim2.new(0, 0, 1, 0)
+ProgressFill.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+ProgressFill.BorderSizePixel = 0
+ProgressFill.Parent = ProgressBar
+
+local ProgressFillCorner = Instance.new("UICorner")
+ProgressFillCorner.CornerRadius = UDim.new(1, 0)
+ProgressFillCorner.Parent = ProgressFill
+
+local StatusText = Instance.new("TextLabel")
+StatusText.Text = "初始化中..."
+StatusText.Size = UDim2.new(0.8, 0, 0, 20)
+StatusText.Position = UDim2.new(0.1, 0, 0.7, 0)
+StatusText.BackgroundTransparency = 1
+StatusText.TextColor3 = Color3.fromRGB(200, 200, 200)
+StatusText.Font = Enum.Font.Gotham
+StatusText.TextSize = 14
+StatusText.TextXAlignment = Enum.TextXAlignment.Left
+StatusText.Parent = MainFrame
+
+-- 动画效果
+spawn(function()
+    local tweenService = game:GetService("TweenService")
+    
+    -- 进度条动画
+    local progressTween = tweenService:Create(
+        ProgressFill,
+        TweenInfo.new(2, Enum.EasingStyle.Linear),
+        {Size = UDim2.new(1, 0, 1, 0)}
+    )
+    
+    -- 背景闪烁动画
+    local bgTween = tweenService:Create(
+        MainFrame,
+        TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true),
+        {BackgroundColor3 = Color3.fromRGB(40, 40, 50)}
+    )
+    
+    progressTween:Play()
+    bgTween:Play()
+    
+    -- 更新状态文本
+    local statusMessages = {
+        "加载反挂机系统...",
+        "初始化用户界面...",
+        "准备功能模块...",
+        "加载音效资源...",
+        "验证脚本完整性...",
+        "准备就绪..."
+    }
+    
+    for i, message in ipairs(statusMessages) do
+        StatusText.Text = message
+        wait(0.3)
+    end
+    
+    -- 完成加载后淡出
+    local fadeOut = tweenService:Create(
+        MainFrame,
+        TweenInfo.new(0.5, Enum.EasingStyle.Quad),
+        {BackgroundTransparency = 1}
+    )
+    
+    fadeOut:Play()
+    fadeOut.Completed:Connect(function()
+        LoadingUI:Destroy()
+    end)
+end)
+
+-- 在这里放置您的原始脚本内容
+-- 当加载界面消失后，原始脚本会继续执行
+
 print("反挂机开启")
 		local vu = game:GetService("VirtualUser")
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -445,6 +568,24 @@ local Tab = Window:Tab({
     Title = "DOORS",
     Icon = "door-open",
     Locked = false,
+})
+
+local Button = Tab:Button({
+    Title = "MS",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://www.msdoors.xyz/script"))()
+    end
+})
+
+local Button = Tab:Button({
+    Title = "暗影脉冲Alpha",
+    Desc = "功能比较少",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ZIONPCE/JB/refs/heads/main/0wyaeC6y.lua"))()
+    end
 })
 
 local Button = Tab:Button({
