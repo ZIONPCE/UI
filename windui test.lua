@@ -170,6 +170,11 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/a
             SaveKey = false,
         },
     })
+    
+    Window:Tag({
+    Title = "v1.6.4",
+    Color = Color3.fromHex("#30ff6a")
+})
         
 Window:EditOpenButton({
     Title = "   打开Z脚本   ",
