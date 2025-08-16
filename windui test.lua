@@ -136,7 +136,7 @@ local Sound = Instance.new("Sound")
         Sound.PlayOnRemove = true
         Sound:Destroy()
 
-local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/asg/refs/heads/main/wind%20ui.lua"))()
+local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Footagesus/WindUI/main/dist/main.lua"))()
 
     local Window = WindUI:CreateWindow({
         Title = "Z脚本",
@@ -175,6 +175,25 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/a
     Title = "v1.6.4",
     Color = Color3.fromHex("#30ff6a")
 })
+local TimeTag = Window:Tag({
+    Title = "00:00",
+    Color = Color3.fromHex("#000000")
+})
+task.spawn(function()
+	while true do
+		local now = os.date("*t")
+		local hours = string.format("%02d", now.hour)
+		local minutes = string.format("%02d", now.min)
+		
+		hue = (hue + 0.01) % 1
+		local color = Color3.fromHSV(hue, 1, 1)
+		
+		TimeTag:SetTitle(hours .. ":" .. minutes)
+		TimeTag:SetColor(color)
+
+		task.wait(0.06)
+	end
+end)
         
 Window:EditOpenButton({
     Title = "   打开Z脚本   ",
