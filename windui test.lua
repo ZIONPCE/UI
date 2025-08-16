@@ -139,83 +139,37 @@ local Sound = Instance.new("Sound")
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/asg/refs/heads/main/wind%20ui.lua"))()
 
 local Window = WindUI:CreateWindow({
-    Title = "loc:WINDUI_EXAMPLE",
-    Icon = "palette",
-    Author = "loc:WELCOME",
-    Folder = "WindUI_Example",
-    Size = UDim2.fromOffset(580, 490),
-    Theme = "Dark",
-    -- Background = WindUI:Gradient({
-    --     ["0"] = { Color = Color3.fromHex("#0f0c29"), Transparency = 1 },
-    --     ["100"] = { Color = Color3.fromHex("#302b63"), Transparency = 0.9 },
-    -- }, {
-    --     Rotation = 45,
-    -- }),
-    --Background = "video:https://cdn.discordapp.com/attachments/1337368451865645096/1402703845657673878/VID_20250616_180732_158.webm?ex=68958a01&is=68943881&hm=164c5b04d1076308b38055075f7eb0653c1d73bec9bcee08e918a31321fe3058&",
-    User = {
-        Enabled = true,
-        Anonymous = true,
-        Callback = function()
-            WindUI:Notify({
-                Title = "User Profile",
-                Content = "User profile clicked!",
-                Duration = 3
-            })
-        end
-    },
-    SideBarWidth = 200,
-    -- KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
-    --     -- Key = { "1234", "5678" },  
-    --     Note = "Example Key System. With platoboost, etc.",
-    --     -- URL = "https://github.com/Footagesus/WindUI",
-    --     -- Thumbnail = {
-    --     --     Image = "rbxassetid://",
-    --     --     Title = "Thumbnail",
-    --     -- },
-    --     API = {
-    --         {   
-    --             -- Title = "Platoboost", -- optional 
-    --             -- Desc = "Click to copy.", -- optional
-    --             -- Icon = "rbxassetid://", -- optional
-                
-    --             Type = "platoboost", -- type: platoboost, ...
-    --             ServiceId = 5541, -- service id
-    --             Secret = "1eda3b70-aab4-4394-82e4-4e7f507ae198", -- platoboost secret
-    --         },
-    --         {   
-    --             -- Title = "Other service", -- optional 
-    --             -- Desc = nil, -- optional
-    --             -- Icon = "rbxassetid://", -- optional
-                
-    --             Type = "pandadevelopment", -- type: platoboost, ...
-    --             ServiceId = "windui", -- service id
-    --         },
-    --         {   
-    --             Type = "luarmor",
-    --             ScriptId = "...",
-    --             Discord = "https://discord.com/invite/...",
-    --         },
-    --         { -- Custom service ( ↑↑ look at line 73 ↑↑ )
-    --             Type = "mysuperservicetogetkey",
-    --             ServiceId = 42,
-    --         }
-    --     },
-    --     SaveKey = true,
-    -- },
-})
-
-Window:Tag({
-    Title = "v1.6.4",
-    Color = Color3.fromHex("#30ff6a")
-})
-Window:Tag({
-    Title = "Beta",
-    Color = Color3.fromHex("#315dff")
-})
-local TimeTag = Window:Tag({
-    Title = "00:00",
-    Color = Color3.fromHex("#000000")
-})
+        Title = "Z脚本",
+        Icon = "user-check",
+        Author = "作者:Z某人",
+        Folder = "CloudHub",
+        Size = UDim2.fromOffset(580, 460),
+        Transparent = true,
+        Theme = "Dark",
+        Resizable = true,
+        SideBarWidth = 200,
+        Background = "",
+        BackgroundImageTransparency = 0.42,
+        HideSearchBar = false,
+        ScrollBarEnabled = true,
+        User = {
+            Enabled = true,
+            Anonymous = false,
+            Callback = function()
+                print("clicked")
+            end,
+        },
+        KeySystem = {
+            Key = { "ZMRENPBGHTCY", "5678" },
+            Note = "Example Key System.",
+            Thumbnail = {
+                Image = "rbxassetid://",
+                Title = "Z某人",
+            },
+            URL = "ZMRENPBGHTCY",
+            SaveKey = false,
+        },
+    })
         
 Window:EditOpenButton({
     Title = "   打开Z脚本   ",
