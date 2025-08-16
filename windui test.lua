@@ -166,7 +166,7 @@ local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/a
                 Image = "rbxassetid://",
                 Title = "Z某人",
             },
-            URL = "https://discord.gg/2mvb9CH6",
+            URL = "ZMRENPBGHTCY",
             SaveKey = false,
         },
     })
