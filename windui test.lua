@@ -1,3 +1,40 @@
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+local mtGame = getrawmetatable(game)
+local mtPlayers = getrawmetatable(Players)
+
+setreadonly(mtGame, false)
+setreadonly(mtPlayers, false)
+
+-- hook __namecall for Kick, Destroy, Remove, RemoveAsync, and Shutdown
+local oldNamecall = mtGame.__namecall
+mtGame.__namecall = newcclosure(function(self, ...)
+    local method = getnamecallmethod()
+    
+    if (self == localPlayer and (method == "Kick" or method == "Destroy" or method == "Remove" or method == "RemoveAsync")) or
+       (self == game and method == "Shutdown") then
+        print("[AntiKick] Blocked:", method)
+        return "Error 403-FORBIDDEN"
+    end
+
+    return oldNamecall(self, ...)
+end)
+
+-- prevent overwriting LocalPlayer
+local oldNewIndex = mtPlayers.__newindex
+mtPlayers.__newindex = newcclosure(function(self, key, value)
+    if self == Players and key == "LocalPlayer" then
+        print("[AntiKick] Attempt to overwrite LocalPlayer blocked")
+        return "Error 403-FORBIDDEN"
+    end
+    return oldNewIndex(self, key, value)
+end)
+
+setreadonly(mtGame, true)
+setreadonly(mtPlayers, true)
+
+print("[AntiKick] Advanced AntiKick active.")
+
 -- 创建加载界面
 local LoadingUI = Instance.new("ScreenGui")
 LoadingUI.Name = "ZScriptLoadingUI"
