@@ -738,3 +738,11 @@ local Button = Tab:Button({
 game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
+
+local Tab = Window:Tab({
+    Title = "犯罪大亨",
+    Icon = "bird",
+    Locked = false,
+})
+
+Window:SelectTab(2) -- Number of Tab
