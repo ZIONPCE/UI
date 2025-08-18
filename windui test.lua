@@ -637,7 +637,7 @@ coroutine.wrap(OptimizedSpam)()
 })
 
 local Tabs = {
-    Main = Window:Section({ Title = "犯罪大亨", Opened = true })
+    Main = Window:Section({ Title = "犯罪大亨|未完", Opened = true })
 }
 
 local TabHandles = {
@@ -725,5 +725,80 @@ TabHandles.Elements:Button({
 	1
 }
 game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "M4",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	3,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "蜂蜜",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	2,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "狙击手",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	7,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "伤疤",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	5,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "塔克",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	8,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+local TabHandles = {
+    Elements = Tabs.Main:Tab({ Title = "装备甲", Icon = "layout-grid", Desc = "装备甲" })
+}
+
+TabHandles.Elements:Button({
+    Title = "+20生命值",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	3
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("VestService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
