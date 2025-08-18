@@ -184,25 +184,6 @@ local TimeTag = Window:Tag({
     Color = Color3.fromHex("#000000")
 })
 
-local hue = 0
-
-task.spawn(function()
-	while true do
-		local now = os.date("*t")
-		local hours = string.format("%02d", now.hour)
-		local minutes = string.format("%02d", now.min)
-		
-		hue = (hue + 0.01) % 1
-		local color = Color3.fromHSV(hue, 1, 1)
-		
-		TimeTag:SetTitle(hours .. ":" .. minutes)
-		TimeTag:SetColor(color)
-
-		task.wait(0.06)
-	end
-end)
-
-
 Window:CreateTopbarButton("theme-switcher", "moon", function()
     WindUI:SetTheme(WindUI:GetCurrentTheme() == "Dark" and "Light" or "Dark")
     WindUI:Notify({
