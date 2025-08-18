@@ -618,11 +618,12 @@ local Tab = Window:Tab({
     Locked = false,
 })
 
+local Button = Tab:Button({
     Title = "自动锻炼",
-    Desc = "要拿锻炼工具",
+    Desc = "要拿锻炼器材",
     Locked = false,
     Callback = function()
-    local RemoteFunction = game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction")
+    game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction")
 
 local function OptimizedSpam()
     while true do
