@@ -634,4 +634,3 @@ end
 coroutine.wrap(OptimizedSpam)()
     end
 })
-
