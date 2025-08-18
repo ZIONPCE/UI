@@ -660,3 +660,81 @@ local Button = Tab:Button({
 game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
+
+local Button = Tab:Button({
+    Title = "AK47",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	1,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+local Button = Tab:Button({
+    Title = "M16",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	9,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+local Button = Tab:Button({
+    Title = "QBZ",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	4,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+local Button = Tab:Button({
+    Title = "乌兹",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	14,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+local Button = Tab:Button({
+    Title = "伤害5",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	11,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+local Button = Tab:Button({
+    Title = "M9",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	10,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
