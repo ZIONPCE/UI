@@ -620,7 +620,7 @@ local Tab = Window:Tab({
 
 local Button = Tab:Button({
     Title = "自动锻炼",
-    Desc = "",
+    Desc = "要拿锻炼工具",
     Locked = false,
     Callback = function()
     local RemoteFunction = game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction")
@@ -633,5 +633,30 @@ local function OptimizedSpam()
 end
 
 coroutine.wrap(OptimizedSpam)()
+    end
+})
+
+local Tab = Window:Tab({
+    Title = "犯罪大亨",
+    Icon = "warehouse",
+    Locked = false,
+})
+
+local Section = Tab:Section({ 
+    Title = "----------装备区----------",
+    TextXAlignment = "Left",
+    TextSize = 17, -- Default Size
+})
+
+local Button = Tab:Button({
+    Title = "散弹枪",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local args = {
+	6,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
