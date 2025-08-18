@@ -647,6 +647,6 @@ TabHandles.Elements:Button({
     Title = "散弹枪",
     Icon = "bell",
     Callback = function()
---添加功能
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
     end
 })
