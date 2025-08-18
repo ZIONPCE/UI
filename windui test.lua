@@ -738,15 +738,3 @@ local Button = Tab:Button({
 game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
-
-local Tab = Window:Tab({
-    Title = "犯罪大亨",
-    Icon = "bird",
-    Locked = false,
-})
-
-local Section = Window:Section({
-    Title = "犯罪大亨测试",
-    Icon = "bird",
-    Opened = true,
-})
