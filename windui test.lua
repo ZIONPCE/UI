@@ -1,40 +1,3 @@
-local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer
-local mtGame = getrawmetatable(game)
-local mtPlayers = getrawmetatable(Players)
-
-setreadonly(mtGame, false)
-setreadonly(mtPlayers, false)
-
--- hook __namecall for Kick, Destroy, Remove, RemoveAsync, and Shutdown
-local oldNamecall = mtGame.__namecall
-mtGame.__namecall = newcclosure(function(self, ...)
-    local method = getnamecallmethod()
-    
-    if (self == localPlayer and (method == "Kick" or method == "Destroy" or method == "Remove" or method == "RemoveAsync")) or
-       (self == game and method == "Shutdown") then
-        print("[AntiKick] Blocked:", method)
-        return "Error 403-FORBIDDEN"
-    end
-
-    return oldNamecall(self, ...)
-end)
-
--- prevent overwriting LocalPlayer
-local oldNewIndex = mtPlayers.__newindex
-mtPlayers.__newindex = newcclosure(function(self, key, value)
-    if self == Players and key == "LocalPlayer" then
-        print("[AntiKick] Attempt to overwrite LocalPlayer blocked")
-        return "Error 403-FORBIDDEN"
-    end
-    return oldNewIndex(self, key, value)
-end)
-
-setreadonly(mtGame, true)
-setreadonly(mtPlayers, true)
-
-print("[AntiKick] Advanced AntiKick active.")
-
 -- 创建加载界面
 local LoadingUI = Instance.new("ScreenGui")
 LoadingUI.Name = "ZScriptLoadingUI"
@@ -646,5 +609,29 @@ local Button = Tab:Button({
     Locked = false,
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DROID-cell-sys/ANTI-UTTP-SCRIPTT/refs/heads/main/EGOR%20SCRIPT%20BY%20ANTI-UTTP"))()
+    end
+})
+
+local Tab = Window:Tab({
+    Title = "强力模拟器",
+    Icon = "warehouse",
+    Locked = false,
+})
+
+local Button = Tab:Button({
+    Title = "自动锻炼",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    local RemoteFunction = game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction")
+
+local function OptimizedSpam()
+    while true do
+        RemoteFunction:InvokeServer("S_Tools_Activate", {})
+        task.wait(0.001)
+    end
+end
+
+coroutine.wrap(OptimizedSpam)()
     end
 })
