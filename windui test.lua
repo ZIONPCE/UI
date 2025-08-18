@@ -635,20 +635,3 @@ coroutine.wrap(OptimizedSpam)()
     end
 })
 
-local Section = Window:Section({
-    Title = "Section for the tabs",
-    Icon = "bird",
-    Opened = true,
-})
-
-local TabHandles = {
-    Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" })
-}
-
-TabHandles.Elements:Button({
-    Title = "散弹枪",
-    Icon = "bell",   --图片
-    Callback = function()
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
-    end
-})
