@@ -641,10 +641,6 @@ local Section = Window:Section({
     Opened = true,
 })
 
-local Tabs = {
-    Main = Window:Section({ Title = "犯罪大亨", Opened = true })
-}
-
 local TabHandles = {
     Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" })
 }
