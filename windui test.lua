@@ -638,11 +638,15 @@ coroutine.wrap(OptimizedSpam)()
 local Tabs = {
     Main = Window:Section({ Title = "犯罪大亨", Opened = true }),
 }
-    
+
+local TabHandles = {
+    Elements = Tabs.Main:Tab({ Title = "loc:装备枪", Icon = "layout-grid", Desc = "装备枪" }),
+}
+
 TabHandles.Elements:Button({
-    Title = "Show Notification",
+    Title = "散弹枪",
     Icon = "bell",
     Callback = function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
+--添加功能
     end
 })
