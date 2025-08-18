@@ -635,6 +635,15 @@ coroutine.wrap(OptimizedSpam)()
     end
 })
 
+Window:CreateTopbarButton("theme-switcher", "moon", function()
+    WindUI:SetTheme(WindUI:GetCurrentTheme() == "Dark" and "Light" or "Dark")
+    WindUI:Notify({
+        Title = "Theme Changed",
+        Content = "Current theme: "..WindUI:GetCurrentTheme(),
+        Duration = 2
+    })
+end, 990)
+
 local Tabs = {
     Main = Window:Section({ Title = "犯罪大亨", Opened = true })
 }
