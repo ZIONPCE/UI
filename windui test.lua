@@ -636,15 +636,11 @@ coroutine.wrap(OptimizedSpam)()
 })
 
 local Tabs = {
-    Main = Window:Section({ Title = "犯罪大亨", Opened = true }),
-    Settings = Window:Section({ Title = "loc:SETTINGS", Opened = true }),
-    Utilities = Window:Section({ Title = "loc:UTILITIES", Opened = true })
+    Main = Window:Section({ Title = "犯罪大亨", Opened = true })
 }
 
 local TabHandles = {
-    Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" }),
-    Appearance = Tabs.Settings:Tab({ Title = "loc:APPEARANCE", Icon = "brush" }),
-    Config = Tabs.Utilities:Tab({ Title = "loc:CONFIGURATION", Icon = "settings" })
+    Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" })
 }
 
 TabHandles.Elements:Button({
