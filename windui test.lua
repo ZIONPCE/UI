@@ -648,6 +648,82 @@ TabHandles.Elements:Button({
     Title = "散弹枪",
     Icon = "bell",   --图片
     Callback = function()
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
+local args = {
+	6,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "AK47",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	1,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "M16",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	9,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "QBZ",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	4,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "乌兹",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	14,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "伤害5",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	11,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "M9",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	10,
+	1
+}
+game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
