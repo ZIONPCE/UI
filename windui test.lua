@@ -636,17 +636,13 @@ coroutine.wrap(OptimizedSpam)()
     end
 })
 
-local Tab = Window:Tab({
-    Title = "犯罪大亨",
-    Icon = "warehouse",
-    Locked = false,
-})
-
-local Section = Tab:Section({ 
-    Title = "----------装备区----------",
-    TextXAlignment = "Left",
-    TextSize = 17, -- Default Size
-})
+local Tabs = {
+    Main = Window:Section({ Title = "犯罪大亨", Opened = true }),
+}
+    
+local TabHandles = {
+    Elements = Tabs.Main:Tab({ Title = "装备枪", Icon = "layout-grid", Desc = "装备枪" }),
+}
 
 local Button = Tab:Button({
     Title = "散弹枪",
@@ -738,11 +734,3 @@ local Button = Tab:Button({
 game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("FirearmService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
-
-local Tabs = {
-    Main = Window:Section({ Title = "loc:犯罪大亨", Opened = true }),
-}
-    
-local TabHandles = {
-    Elements = Tabs.Main:Tab({ Title = "loc:装备枪", Icon = "layout-grid", Desc = "装备枪" }),
-}
