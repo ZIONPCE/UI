@@ -745,4 +745,8 @@ local Tab = Window:Tab({
     Locked = false,
 })
 
-Window:SelectTab(2) -- Number of Tab
+local Section = Window:Section({
+    Title = "犯罪大亨测试",
+    Icon = "bird",
+    Opened = true,
+})
