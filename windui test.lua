@@ -807,6 +807,10 @@ local Tabs = {
     Main = Window:Section({ Title = "挖出后院", Opened = true })
 }
 
+local TabHandles = {
+    Elements = Tabs.Main:Tab({ Title = "全部", Icon = "layout-grid", Desc = "全部" })
+}
+
 local toggleState = false
 local running = false  -- 用于跟踪循环是否正在运行
 
