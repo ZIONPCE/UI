@@ -802,3 +802,19 @@ TabHandles.Elements:Button({
 game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("VestService"):WaitForChild("RF"):WaitForChild("Equip"):InvokeServer(unpack(args))
     end
 })
+
+local toggleState = false
+local featureToggle = TabHandles.Elements:Toggle({
+    Title = "功能名字",
+    Desc = "简介",
+    Value = false,
+    Callback = function(state) 
+        toggleState = state
+        WindUI:Notify({
+            Title = "脚本",
+            Content = state and "功能已启用" or "功能已关闭",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
