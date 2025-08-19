@@ -811,10 +811,17 @@ local featureToggle = TabHandles.Elements:Toggle({
     Callback = function(state) 
         toggleState = state
         WindUI:Notify({
-            Title = "脚本",
+            Title = "自动出售",
             Content = state and "功能已启用" or "功能已关闭",
             Icon = state and "check" or "x",
             Duration = 2
         })
+        local args = {"SellOres"}
+local delay = 60 -- 每60秒执行一次（可根据需要调整）
+
+while true do
+    game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("MineUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    wait(delay)
+end
     end
 })
