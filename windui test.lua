@@ -849,3 +849,51 @@ local featureToggle = TabHandles.Elements:Toggle({
         end
     end
 })
+
+TabHandles.Elements:Button({
+    Title = "升级铲子",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	"BuyUpgrade",
+	"Shovel"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("UpgradeUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "升级背包",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	"BuyUpgrade",
+	"Backpack"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("UpgradeUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "升级能量",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	"BuyUpgrade",
+	"Energy"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("UpgradeUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+})
+
+TabHandles.Elements:Button({
+    Title = "升级喷气背包",
+    Icon = "bell",   --图片
+    Callback = function()
+    local args = {
+	"BuyUpgrade",
+	"Jetpack"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("UpgradeUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end
+})
