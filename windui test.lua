@@ -803,7 +803,15 @@ game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Kn
     end
 })
 
+local Tab = Window:Tab({
+    Title = "挖出后院",
+    Icon = "warehouse",
+    Locked = false,
+})
+
 local toggleState = false
+local running = false  -- 用于跟踪循环是否正在运行
+
 local featureToggle = TabHandles.Elements:Toggle({
     Title = "功能名字",
     Desc = "简介",
@@ -816,12 +824,26 @@ local featureToggle = TabHandles.Elements:Toggle({
             Icon = state and "check" or "x",
             Duration = 2
         })
-        local args = {"SellOres"}
-local delay = 60 -- 每60秒执行一次（可根据需要调整）
-
-while true do
-    game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("MineUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-    wait(delay)
-end
+        
+        if state then
+            -- 如果功能启用，启动循环
+            if not running then
+                running = true
+                local args = {"SellOres"}
+                local delay = 60 -- 每60秒执行一次（可根据需要调整）
+                
+                -- 使用coroutine来运行循环，这样可以不阻塞主线程
+                coroutine.wrap(function()
+                    while toggleState and running do
+                        game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("MineUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+                        wait(delay)
+                    end
+                    running = false
+                end)()
+            end
+        else
+            -- 如果功能关闭，设置running为false，循环会在下一次检查时停止
+            running = false
+        end
     end
 })
