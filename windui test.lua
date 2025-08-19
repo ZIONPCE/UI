@@ -815,8 +815,8 @@ local toggleState = false
 local running = false  -- 用于跟踪循环是否正在运行
 
 local featureToggle = TabHandles.Elements:Toggle({
-    Title = "功能名字",
-    Desc = "简介",
+    Title = "自动出售",
+    Desc = "60秒一次",
     Value = false,
     Callback = function(state) 
         toggleState = state
