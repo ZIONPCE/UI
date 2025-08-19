@@ -803,11 +803,9 @@ game:GetService("ReplicatedStorage"):WaitForChild("KnitFolder"):WaitForChild("Kn
     end
 })
 
-local Tab = Window:Tab({
-    Title = "挖出后院",
-    Icon = "warehouse",
-    Locked = false,
-})
+local Tabs = {
+    Main = Window:Section({ Title = "挖出后院", Opened = true })
+}
 
 local toggleState = false
 local running = false  -- 用于跟踪循环是否正在运行
