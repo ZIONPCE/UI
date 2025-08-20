@@ -897,3 +897,29 @@ TabHandles.Elements:Button({
 game:GetService("ReplicatedStorage"):WaitForChild("Framework"):WaitForChild("Features"):WaitForChild("MiningSystem"):WaitForChild("UpgradeUtil"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
     end
 })
+
+local TabHandles = {
+    Elements = Tabs.Main:Tab({ Title = "传送", Icon = "layout-grid", Desc = "传送" })
+}
+
+TabHandles.Elements:Button({
+    Title = "传送到地面",
+    Icon = "bell",   --图片
+    Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(474.3276672363281, 30.063386917114258, -656.1741333007812)
+    end
+})
+
+
+local Tab = Window:Tab({
+    Title = "建造一艘火箭船",
+    Icon = "warehouse",
+    Locked = false,
+})
+
+local Button = Tab:Button({
+    Title = "刷钱",
+    Desc = "点之前先启动火箭",
+    Locked = false,
+    Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3342.96826171875, 112631.7578125, 8874.263671875)
